@@ -60,7 +60,7 @@ app.get('/weather', (req, res) => {
             })
         }
 
-        forecast(latitude, longitude, (error, {summary, temperature, rainChance} = {}) => {
+        forecast(latitude, longitude, (error, {summary, temperature, tempMax, tempMin, rainChance} = {}) => {
             if (error) {
                 return res.send({
                     error: 'An error occured while fetching weather data'
@@ -72,6 +72,8 @@ app.get('/weather', (req, res) => {
                 location,
                 summary,
                 temperature,
+                tempMax,
+                tempMin,
                 rainChance
             })
         })

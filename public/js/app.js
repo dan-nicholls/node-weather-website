@@ -20,7 +20,7 @@ weatherForm.addEventListener('submit', (e)=>{
                 messageOne.textContent = 'Error: ' + data.error
             } else {
                 messageOne.textContent = data.location
-                messageTwo.textContent = ('It\'s currently ' + data.temperature + '°C degrees and ' + data.summary + ' with a ' + data.rainChance + '\% chance of rain.')
+                messageTwo.textContent = ('It\'s currently ' + data.temperature + '°C with ' + data.summary +'. Today there is a high of ' + data.tempMax + '°C and a low of ' + data.tempMin + '°C with a ' + data.rainChance + '\% chance of rain.')
             }
         })
     })

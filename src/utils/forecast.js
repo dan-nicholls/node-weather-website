@@ -10,9 +10,13 @@ const forecast = (lat, lon, callback) => {
             callback('Invalid location data', undefined)
         } else {
             callback(undefined, {
+
+                // TODO - Refactor body response
                 summary: body.currently.summary,
                 temperature: body.currently.temperature,
-                rainChance: body.currently.precipProbability
+                tempMax: body.daily.data[0].temperatureHigh,
+                tempMin: body.daily.data[0].temperatureLow,
+                rainChance: body.currently.precipProbability*100
             })
         }
     })
